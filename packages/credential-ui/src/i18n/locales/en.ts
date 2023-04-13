@@ -10,7 +10,7 @@ const en = {
     "webview.credential_list.cloud_vendor": "Cloud Vendor",
     "webview.credential_list.cloud_vendor_placeholder": "Please select a cloud vendor",
     "webview.credential_list.cloud_vendor_required": "Cloud vendor cannot be empty",
-    "webview.credential_list.how_to_get": "Key acquisition guide",
+    "webview.credential_list.how_to_get": "Access guide",
     "webview.credential_list.access_key_id": "Please enter AccessKeyID",
     "webview.credential_list.access_key_id_required": "AccessKeyID cannot be empty",
     "webview.credential_list.access_key_secret": "Please enter AccessKeySecret",

@@ -63,7 +63,7 @@ const CredentialUi: FC<IProps> = (props) => {
     window.open(get(obj, 'doc') as string);
   };
 
-  const showDocButton = !!getValue('provider') && getValue('provider') !== PROVIDER.custom;
+  const showDocButton = () => !!getValue('provider') && getValue('provider') !== PROVIDER.custom;
 
   return (
     <>
@@ -108,7 +108,7 @@ const CredentialUi: FC<IProps> = (props) => {
                 </FormItem>
 
               </Col>
-              {showDocButton && (
+              {showDocButton() && (
                 <Button
                   className='ml-16'
                   type="primary"
