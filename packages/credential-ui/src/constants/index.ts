@@ -5,7 +5,7 @@ export const FORM_LAYOUT = {
     fixedSpan: 8,
   },
   wrapperCol: {
-    span: 16,
+    span: 14,
   },
   labelTextAlign: 'left' as Align,
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FC, useState, PropsWithChildren } from 'react';
 import SlidePanel from '@alicloud/console-components-slide-panel';
+import { ISlidePanelProps } from '@alicloud/console-components-slide-panel/es/types/ISlidePanelProps.type'
 import { Form, Field, Select, Button, Input, Message, Grid } from '@alicloud/console-components';
 import { FORM_LAYOUT, PROVIDER_LIST, PROVIDER } from './constants';
 import Alibaba from './components/Alibaba';
@@ -17,7 +18,7 @@ import './style/index.less';
 const FormItem = Form.Item;
 const { Row, Col } = Grid;
 
-type IProps = PropsWithChildren & {
+type IProps = PropsWithChildren & ISlidePanelProps & {
   title?: string;
   existAlias?: string[];
   showAccountID?: boolean;
@@ -26,7 +27,7 @@ type IProps = PropsWithChildren & {
 }
 
 const CredentialUi: FC<IProps> = (props) => {
-  const { children, title = i18n('webview.credential_list.add_key'), existAlias, onConfirm = noop, onOpenDocument, showAccountID } = props;
+  const { children, title = i18n('webview.credential_list.add_key'), existAlias, onConfirm = noop, onOpenDocument, showAccountID, ...rest } = props;
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -68,13 +69,13 @@ const CredentialUi: FC<IProps> = (props) => {
     <>
       <span onClick={() => setVisible(true)}>{children}</span>
       <SlidePanel
+        {...rest}
         title={title}
         isShowing={visible}
         onClose={handleClose}
         onOk={handleOK}
         onCancel={handleClose}
         isProcessing={loading}
-        width="large"
         okText={i18n('webview.common.confirm')}
         cancelText={i18n('webview.common.cancel')}
         processingText={i18n('webview.common.processing')}
